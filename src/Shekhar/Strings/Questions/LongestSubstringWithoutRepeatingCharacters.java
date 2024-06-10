@@ -18,10 +18,12 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
         while (end < s.length()) {
             if (!list.contains(s.charAt(end))) {
+                System.out.println("Value added : " + s.charAt(end));
                 list.add(s.charAt(end));
                 end++;
                 maxLength = Math.max(maxLength, list.size());
             } else {
+                System.out.println("Value removed : " + s.charAt(start));
                 list.remove(Character.valueOf(s.charAt(start)));
                 start++;
             }
